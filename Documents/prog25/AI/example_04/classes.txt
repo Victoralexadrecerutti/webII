@@ -1,0 +1,30 @@
+@startuml
+
+class Receita {
+    +id: int
+    +nome: string
+    +modo_de_fazer: string
+    +url: string
+}
+
+class Ingrediente {
+    +id: int
+    +nome: string
+    +quantidade: float
+    +medida: string
+}
+
+class Opiniao {
+    +id: int
+    +nome_pessoa: string
+    +email: string
+    +opiniao: string
+    +nota: int [1..5]
+}
+
+Receita "1" -- "0..*" Ingrediente : contém >
+Receita "1" -- "0..*" Opiniao : recebe >
+Ingrediente "1" -- "1" Receita : pertence a >
+Opiniao "1" -- "1" Receita : refere-se a >
+
+@enduml

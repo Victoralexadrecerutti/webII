@@ -1,0 +1,26 @@
+@startuml
+
+
+  folder "/" {
+    [Pagina Inicial (page.tsx)]
+  }
+  
+  frame "/incluir" {
+    [Pagina de nova pessoa (page.tsx)]
+  }
+  
+  node "/components" {
+    [FormPessoa (form_pessoa.tsx)]
+    [Listagem (listagem.tsx)]
+  }
+
+
+[Pagina Inicial (page.tsx)] --> [Pagina de nova pessoa (page.tsx)] : navega
+[Pagina de nova pessoa (page.tsx)] --> [Pagina Inicial (page.tsx)] : navega
+
+
+[Pagina de nova pessoa (page.tsx)] ..> [FormPessoa (form_pessoa.tsx)] : usa
+[Pagina Inicial (page.tsx)] ..> [Listagem (listagem.tsx)] : usa
+
+@enduml
+
